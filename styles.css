@@ -1,10 +1,16 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
 .background {
   width: 100%;
   height: 100%;
+  background-size: cover;
   /* Add your background pattern here */
   --sz: 15px;
   --c0: #000;
-  --c1: #c71175;
+  --c1: #1193c7;
   --ts: 50% / calc(var(--sz) * 8) calc(var(--sz) * 16);
   margin: 0;
   padding: 0;
@@ -80,7 +86,7 @@ table {
   background: linear-gradient(
     45deg,
     #3498db,
-    #2ecc71
+    #2ecccc
   ); /* Gradient background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
   border-radius: 10px; /* Rounded corners */
@@ -119,9 +125,9 @@ table {
 }
 
 .form-container {
-  width: 70%;
+  width: 60%;
   background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) 
+              linear-gradient(145deg, transparent 35%,#1c20ff, #40c9ff) 
               border-box;
   margin: auto;
   border: 5px solid transparent;
@@ -156,7 +162,7 @@ input[type="text"] {
   .comment-box{
     height: 250px;
     width: 30%;
-    background-color: green;
+    background-color: rgb(0, 113, 128);
     color: Black;
     padding: 15px;
     text-align: center;
@@ -165,28 +171,14 @@ input[type="text"] {
     border-radius: 125px;
   }
 .dialogue{
-    background-color: green;
+    background-color: rgb(5, 126, 126);
     color: Black;
     padding: 15;
     text-align: center;
     font-size: 30px; 
     font-family: Bodoni MT;
-  }
-  .content-area{
-    display: flex;
-  }
-  .content-image{
-    height: auto;
-    width: ;
-    float: left;
-    margin: 10px
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+      box-sizing: border-box;
+  border-radius: 16px;
   }
   button {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -226,7 +218,7 @@ input[type="text"] {
   .transition {
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
     transition-duration: 500ms;
-    background-color: rgba(16, 185, 129, 0.6);
+    background-color: rgba(16, 69, 185, 0.6);
     border-radius: 9999px;
     width: 0;
     height: 0;

@@ -1,7 +1,14 @@
-
-
 <!DOCTYPE html> 
 <html> 
+  
+<script src="/calculator.js" type="text/javascript"
+></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer">
+</script>
+
 <link rel="StyleSheet" href="styles.css">
 <head> 
 <title>Eddie is really cool</title>
@@ -17,21 +24,19 @@
         HTML Calculator
     </div>
       </div>
-      <div class="dialogue-container">
     <div class="dialogue">
         by Eddie
-    </div>
 </div>
     <table id="calculator"> 
         <tr> 
             <td colspan="5"> 
-                <input type="text" id="result">
-                <td><button>
+                <input type="text" id="display">
+                <td><button onclick="backspace()">
                     <span class="transition"></span>
                     <span class="gradient"></span>
                     <span class="label">del</span>
                   </button></td> 
-            <td><button>
+            <td><button onclick="display.value = ''">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">clear</span>
@@ -40,148 +45,148 @@
         </tr> 
 
         <tr> 
-            <td><button>
+            <td><button onclick="display.value += '!'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">x!</span>
               </button></td>
-            <td><button>
+            <td><button onclick="display.value += 'sin('">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">sin</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += Math.LN2">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">ln</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '1'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">1</span>
               </button></td>
-            <td><button>
+            <td><button onclick="display.value += '2'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">2</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '3'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">3</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '/'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">/</span>
               </button></td> 
         </tr> 
         <tr> 
-            <td><button>
+            <td><button onclick="pi()">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">pi</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += 'cos('">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">cos</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="base10Log()">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">log</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '4'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">4</span>
               </button></td>
-            <td><button>
+            <td><button onclick="display.value += '5'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">5</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '6'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">6</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '*'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">×</span>
               </button></td> 
         </tr> 
         <tr> 
-            <td><button>
+            <td><button onclick="e()">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">e</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += 'tan('">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">tan</span>
               </button></td> 
-            <td><button>
+            <td><button  onclick="squareRoot()">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">sqrt</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '7'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">7</span>
               </button></td>
-            <td><button>
+            <td><button onclick="display.value += '8'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">8</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '9'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">9</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="calculate()">
               <span class="transition"></span>
               <span class="gradient"></span>
               <span class="label">=</span>
             </button></td> 
         </tr> 
         <tr> 
-            <td><button>
+            <td><button onclick="display.value += 'exp('">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">e×p(^)</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '('">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">(</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += ')'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">)</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '.'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
-                <span class="label">=</span>
+                <span class="label">.</span>
               </button></td>
-            <td><button>
+            <td><button onclick="display.value += '0'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">0</span>
               </button></td>
-            <td><button>
+            <td><button onclick="display.value += '%'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">%</span>
               </button></td> 
-            <td><button>
+            <td><button onclick="display.value += '+'">
                 <span class="transition"></span>
                 <span class="gradient"></span>
                 <span class="label">+</span>
